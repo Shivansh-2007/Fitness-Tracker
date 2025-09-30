@@ -1,0 +1,71 @@
+.dashboard-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.progress-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+.progress-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.no-data {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.custom-tooltip {
+  background: white;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-date {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.tooltip-value {
+  margin: 4px 0;
+}
+
+.tooltip-label {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+  .progress-content {
+    padding: 10px;
+  }
+  
+  .ant-col {
+    margin-bottom: 12px;
+  }
+}
