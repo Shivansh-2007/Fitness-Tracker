@@ -1,51 +1,52 @@
-import { all } from 'axios';
-import React from 'react';
-import { FaUser } from 'react-icons/fa';
+import React, { useState } from "react";
+import "./Navbar.css";
+import { FaUser, FaHome, FaUsers } from "react-icons/fa";
 
 const Navbar = () => {
-  return (
-    <div>
-      <nav style={{
-        padding: '13px', 
-        background: 'linear-gradient(135deg, #06402B -10%, #4CAF50 100%)', 
-        height: '25px', 
-        borderBottom: 'solid 2px #000',
-        display: 'flex',
-        alignItems: 'center',
-        position: 'relative'
-      }}>
-        <div style={{
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          gap: '20px'
-        }}>
-          <a style={{color: 'White', textDecoration: 'none'}} href="/">Home</a>
-          {/* <a style={{color: 'White', textDecoration: 'none'}} href="/progress">Progress</a> */}
-          <a style={{color: 'White', textDecoration: 'none'}} href="/users">Users</a>
-        </div>
+  const [activeLink, setActiveLink] = useState('home');
 
-        <div style={{
-          marginLeft: 'auto', 
-          display: 'flex',
-          gap: '20px',
-          alignItems: 'center'
-        }}>
-          <a style={{color: 'White', textDecoration: 'none', borderRadius: '50px', background: 'Transparent', padding: '0.5rem 1rem', borderWidth:'0.5px', border: 'solid'}} href="/login">Login</a>
-          <a style={{color: 'Black', textDecoration: 'none', borderRadius: '50px', background: 'White', padding: '0.5rem 1rem'}} href="/register">Register</a>
-          {/* <a style={{
-            color: 'Matteblue', 
-            textDecoration: 'none',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '5px'
-          }} href="/profile">
-            <FaUser /> Profile
-          </a> */}
+  return (
+    <nav className="navbar">
+      <div className="navbar-brand">
+        <h1>Gym Stats</h1>
+      </div>
+
+      <div className="navbar-center">
+        <a 
+          href="/" 
+          className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
+          onClick={() => setActiveLink('home')}
+        >
+          <FaHome className="nav-link-icon" />
+          <span>Home</span>
+        </a>
+        <a 
+          href="/users" 
+          className={`nav-link ${activeLink === 'users' ? 'active' : ''}`}
+          onClick={() => setActiveLink('users')}
+        >
+          <FaUsers className="nav-link-icon" />
+          <span>Users</span>
+        </a>
+      </div>
+
+      <div className="navbar-right">
+        <a href="/login" className="nav-btn glass-btn">
+          Login
+        </a>
+        <a href="/register" className="nav-btn gradient-btn">
+          Register
+        </a>
+      </div>
+
+      <div className="mobile-menu-icon">
+        <div className="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 

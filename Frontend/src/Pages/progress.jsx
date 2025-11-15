@@ -119,7 +119,6 @@ const fetchProgressData = async () => {
 
   return (
     <div className="dashboard-layout">
-      <DashboardNavbar />
       
       <div className="progress-content">
         <Card title="Workout Progress" className="progress-card">

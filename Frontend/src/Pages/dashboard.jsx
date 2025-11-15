@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import './dashboard.css';
 import DashboardNavbar from '../Components/DashboardNavbar';
 import axios from 'axios';
@@ -27,7 +27,6 @@ const Dashboard = () => {
 
   return (
     <div>
-      <DashboardNavbar />
       <div className="dashboard-container">
         <header className="dashboard-header">
           <h1>Your Fitness Dashboard</h1>

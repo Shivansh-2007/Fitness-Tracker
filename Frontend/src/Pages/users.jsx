@@ -19,7 +19,6 @@ const Users = () => {
 
   return (
     <div>
-      <Navbar />
       <h2>Users List</h2>
       
       <div style={{ 
